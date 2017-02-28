@@ -2,4 +2,4 @@
 title: "About This Website"
 ---
 
-More about this website.
+This website is an attempt to seamlessly combine my data work with my GitHub repo using RMarkdown and GitHub Pages. So far, it's working. Let's get some data viz going.
