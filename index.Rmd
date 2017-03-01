@@ -1,2 +1,5 @@
-## -
+
+---
 # Exploratory Text Analysis
+
+Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz
