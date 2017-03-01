@@ -14,6 +14,8 @@ Percolator session by Carolyn Moritz
 The following begins with a handy reference provided by RStudio. To create the basis of demonstration as an independent RMarkdown document: **File** -> **New File** -> **R Markdown...**  
 Alterations resulting from the Percolator session will be indicated below in <span style="color:green">green</span>.
 
+<span style="color:green">To follow along on your own machine, first install [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/).</span>
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```

@@ -6,6 +6,8 @@ navbar:
       href: about.html
     - text: "Like this setup?"
       href: setup.html
+target:
+  default: _blank
 output:
   html_document:
     theme: cosmo
