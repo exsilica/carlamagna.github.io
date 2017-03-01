@@ -1,0 +1,12 @@
+---
+title: "Workshops"
+output:
+  toc: true
+  toc_float: true
+    smooth_scroll: true
+  toc_depth: 1
+---
+
+# Workshops
+
+## Exploratory Text Analysis

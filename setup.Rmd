@@ -1,0 +1,15 @@
+---
+title: "Like this setup?"
+---
+
+I followed along with the [RMarkdown Websites](http://rmarkdown.rstudio.com/rmarkdown_websites.html) and [GitHub Pages](https://pages.github.com/) tutorials.
+
+## Notes 
+**Configuration:** Independent of web publishing, you will want to configure RStudio and your GitHub account.[^1]
+[R-Bloggers](https://www.r-bloggers.com/rstudio-and-github/) has a useful walkthrough tutorial. If you simply like things that are free and easy (me too!), you could use this setup without once stepping into the realm of programming with R. However, I suggest checking out some other cool posts on R-Bloggers just to get an idea of the R community and how they work.
+
+**Publishing:** GitHub Pages defaults to Jekyll. Refer to the GitHub Pages section on RMarkdown Website's [Publishing Websites](http://rmarkdown.rstudio.com/rmarkdown_websites.html#publishing_websites) for instructions on how to bypass Jekyll.
+
+**Formatting:** The [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) is also available under **Help** -> **Cheatsheets** in RStudio.
+
+[^1]: If all you want to do is push your work onto a GitHub account, all you really need is to install the R packages you want and you could follow the above instructions from the command line. For easy web integration, however, I strongly recommend the RStudio IDE.

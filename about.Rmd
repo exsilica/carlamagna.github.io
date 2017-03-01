@@ -1,5 +1,5 @@
 ---
-title: "About This Website"
+title: "About RHumans"
 ---
 
-This website is an attempt to seamlessly combine my data work with my GitHub repo using RMarkdown and GitHub Pages. So far, it's working. Let's get some data viz going.
+The R programming language has been the statistical programming darling for some time now. It is now seeing increased use in the emerging Digital Humanities field, and its potential for text analysis is only just beginning to be realized. This website was created by RHuman [Carolyn Moritz](http://twitter.com/exsilica) to explore what "data analysis" can mean in the context of humanities data and nontextual digital media sources.
