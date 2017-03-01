@@ -14,11 +14,18 @@ Percolator session by Carolyn Moritz
 The following begins with a handy reference provided by RStudio. To create the basis of demonstration as an independent RMarkdown document: **File** -> **New File** -> **R Markdown...**  
 Additions resulting from the Percolator session will be indicated below in <span style="color:green">green</span>.
 
-<span style="color:green">To follow along on your own machine, first install [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/).  
+### Initial Setup
+To follow along on your own machine, first install [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/).  
 In the RStudio console, install the RMarkdown package and call the library: 
 <br><br>
 `install.packages("rmarkdown")`  
-`library(rmarkdown)`</span>
+`library(rmarkdown)`  
+
+**Reference Links**  
+* [Get Started](http://rmarkdown.rstudio.com/lesson-1.html)  
+* [RMarkdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)  
+* [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)  
+* [Gallery](http://rmarkdown.rstudio.com/gallery.html)  
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
