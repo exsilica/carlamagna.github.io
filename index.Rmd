@@ -12,7 +12,7 @@ Percolator session by Carolyn Moritz
 *2017/03/01*
 
 The following begins with a handy reference provided by RStudio. To create the basis of demonstration as an independent RMarkdown document: **File** -> **New File** -> **R Markdown...**  
-Alterations resulting from the Percolator session will be indicated below in <span style="color:green">green</span>.
+Additions resulting from the Percolator session will be indicated below in <span style="color:green">green</span>.
 
 <span style="color:green">To follow along on your own machine, first install [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/).  
 In the RStudio console, install the RMarkdown package and call the library: 
