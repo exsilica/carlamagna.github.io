@@ -52,3 +52,7 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 <span style="color:green">Demonstration: Pushing to site</span>
+
+### <span style="color:green">Shiny Web Apps</span>
+
+<span style="color:green">Troubleshooting documentation pending</span>
