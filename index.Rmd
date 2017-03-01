@@ -1,5 +1,39 @@
 
----
+********
 # Exploratory Text Analysis
 
-Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz
+Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz  
+*Forthcoming*
+
+********
+
+# Intro to RMarkdown
+Percolator session by Carolyn Moritz  
+*2017/03/01*
+
+The following begins with a handy reference provided by RStudio. To create the basis of demonstration as an independent RMarkdown document: **File** -> **New File** -> **R Markdown...**  
+Alterations resulting from the Percolator session will be indicated below in <span style="color:green">green</span>.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### RMarkdown
+
+This is an RMarkdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+### Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
