@@ -51,7 +51,25 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-<span style="color:green">Demonstration: Pushing to site</span>
+### <span style="color:green">Demonstration: Pushing to Site</span>
+
+<span style="color:green">Participants curious about this website setup are encouraged to visit [Like this setup?](setup.html) for notes on the resources I used. </span> 
+
+<span style="color:green">Pushing new content to the live site consists of three steps: **Knit**, **Commit**, and **Push**.  </span>
+
+<span style="color:green">Selecting **Knit HTML** ![](images/knit.png)  in the console opens a live preview window. If I had an RPub account synced to this console, I could select **Publish** ![](images/publish.png) and automatically send the generated HTML document to an RPub website. My configuration, however, requires two quick additional steps.</span>  
+
+<span style="color:green">We **commit** changes in the Version Control dropdown menu:</span>      
+![](images/versiondropdown.png)  
+
+<span style="color:green">The left pane displays files that have been changed. Now we select **Staged** for all of them and add a useful commit message. We select **Commit**, close the confirmation window, and finally push the content to the site with **Push**.</span>  
+
+![](images/versioncontrol.png)    
+
+<span style="color:green">Interesting to note: Occasionally, the commit will fail the first time, but succeed on a second attempt. Cursory reserach reveals that this is not an uncommon issue, but I have not yet uncovered the reason.</span>  
+
+<span style="color:green">We can quickly browse the available references (see **Reference Links** in the **Initial Setup** section) to get an idea of what RMarkdown can do. A significant note here is that, while this is an HTML website, RMarkdown has several other output formats available including presentations, word processing and PDF documents, notebooks, and [interactive content](http://rmarkdown.rstudio.com/lesson-14.html). This last output is what I want to explore in today's Percolator session.</span>
+
 
 ### <span style="color:green">Shiny Web Apps</span>
 
