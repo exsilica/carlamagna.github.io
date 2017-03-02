@@ -73,4 +73,26 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ### <span style="color:green">Shiny Web Apps</span>
 
-<span style="color:green">Troubleshooting documentation pending</span>
+<span style="color:green">Adding `runtime: shiny` to the YAML head (which is actually [not the same Pandoc markdown language we are using in the rest of the document](http://push.cwcon.org/learn/yaml-and-markdown.html)) allows us to call Shiny code right in the document. Once we do so, we can see that the **Knit HTML** option has changed to **Run Document** ![](images/rundoc.png).</span>  
+
+<span style="color:green">We first open a standalone Shiny app in RStudio to get an idea of how it behaves: **File** -> **New File** -> **Shiny Web App...** We select **Run App** ![](images/runapp.png) to run the auto-generated web application the sample text provides, which opens in an interactive preview window:</span>    
+
+![](images/shinyapp.png)  
+
+<span style="color:green">Now we're playing! It's time to call some Shiny code into RMarkdown. I take the sample code from the [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) and pop it into our newly-minted **Shiny Web Apps** section.</span>  
+
+`{r, echo = FALSE}`  
+`numericInput("n",`  
+` "How many cars?", 5)`  
+`renderTable({`  
+` head(cars, input$n)`  
+`})`  
+  
+
+<span style="color:green">We can play around with the **cars** app in the preview window, but here we run into publishing issues. Because **Run Document** has completely replaced the option to knit an HTML document, we cannot publish this to the site. Returning to our reference documents, we see that Shiny apps are server-side and, as browsers do not read R code, only run in an active R session. I take `runtime: shiny` out of the head so that I can knit the final results, supposing that the browser version will display a static screenshot. Instead RStudio calls an error: without `runtime: shiny`, it cannot call the code at all:</span>  
+
+![](images/shinyerror.png)  
+
+<span style="color:green">I've instead changed the app markup to unexcuted code (what you see above) to display what we tried to run. It appears the best solution is to create a [shinyapps.io](http://shinyapps.io) account to publish my web apps, and link to them from there. I'll set that up in the following week, and in next week's session we can focus on navigating shinyapps.io as well as client-side **htmlwidgets**.</span>  
+
+Thank you [Sarah Stanley](https://twitter.com/sarcathtic) and [Nicole Strayhorn](https://twitter.com/NickyStray) for a fun and informative exploratory session!
