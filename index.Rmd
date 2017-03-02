@@ -11,6 +11,8 @@ Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz
 Percolator session by Carolyn Moritz  
 *2017/03/01*
 
+**Percolator**: Open office hours here at the [Office of Digital Research & Scholarship](https://www.lib.fsu.edu/drs), located in the Scholars Commons of the FSU Strozier Library. We percolate on Wednesdays from 3:00 - 5:00pm EST, and while everybody is free to come consult, play, or just hang out, sometimes we theme our sessions. I have been a fan of the R language for three years now, but only just discovered RMarkdown last Friday and put up this website on Monday. I am eager to explore possible next steps, so this week's Percolator is in RMarkdown's honor! Here to join me are [Sarah Stanley](https://twitter.com/sarcathtic) and [Nicole Strayhorn](https://twitter.com/NickyStray), with occasional visits and jokes from [Bryan Brown](https://twitter.com/bryjbrown).  
+
 The following begins with a handy reference provided by RStudio. To create the basis of demonstration as an independent RMarkdown document: **File** -> **New File** -> **R Markdown...**  
 Additions resulting from the Percolator session will be indicated below in <span style="color:green">green</span>.
 
@@ -95,4 +97,4 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 <span style="color:green">I've instead changed the app markup to unexcuted code (what you see above) to display what we tried to run. It appears the best solution is to create a [shinyapps.io](http://shinyapps.io) account to publish my web apps, and link to them from there. I'll set that up in the following week, and in next week's session we can focus on navigating shinyapps.io as well as client-side **htmlwidgets**.</span>  
 
-Thank you [Sarah Stanley](https://twitter.com/sarcathtic) and [Nicole Strayhorn](https://twitter.com/NickyStray) for a fun and informative exploratory session!
+Thank you Sarah, Nicole, and Bryan for a fun and informative exploratory session!
