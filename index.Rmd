@@ -10,7 +10,17 @@ Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz
 Shop talk  
 *2017/03/22*
 
+After much trial and error, I finally have embedded interactive apps on the site. I'll start with the solution for those who aren't interested in reading about all of the unsuccessful attempts, but I describe the entire experiment below the app in **Breadcrumbs**.
+
+### Solution
+
+Several other commenters on the [Embedded Shiny Apps](http://rmarkdown.rstudio.com/authoring_embedded_shiny.html) article described having the same problems I was with the `shinyAppDir()` embed approach. User [Liang C. Zhang](https://disqus.com/by/liangchengzhang/) recommended linking to shinyapps.io via iframe with regular HTML. I am happy to say this was successful, although I will add that I personally consider it a workaround, not a solution. I will continue to play around with `shinyAppDir()` and see what I learn. In the meantime, however, the iframe approach allows me to move forward with using this website for interactive applications.
+
 <iframe src="https://exsilica.shinyapps.io/newshinyapp" style="border: none; width: 700px; height: 700px"></iframe>
+
+### Breadcrumbs
+
+*Forthcoming*
 
 ********
 
