@@ -307,16 +307,18 @@ div.tocify {
 <h1>Playing with Shiny Apps</h1>
 <p>Shop talk<br />
 <em>2017/03/22</em></p>
-<p>After much trial and error, I finally have embedded interactive apps on the site. I’ll start with the solution for those who aren’t interested in reading about all of the unsuccessful attempts, but I describe the entire experiment below the app in <strong>Breadcrumbs</strong>.</p>
+<p>After much trial and error, I finally have embedded interactive apps on the site! I am posting the solution first for those who are less interested in the tales of my unsuccessful attempts, but more details can be found under the demo Old Faithful app in the <strong>Breadcrumbs</strong> section.</p>
 <div id="solution" class="section level3">
 <h3>Solution</h3>
-<p>Several other commenters on the <a href="http://rmarkdown.rstudio.com/authoring_embedded_shiny.html">Embedded Shiny Apps</a> article described having the same problems I was with the <code>shinyAppDir()</code> embed approach. User <a href="https://disqus.com/by/liangchengzhang/">Liang C. Zhang</a> recommended linking to shinyapps.io via iframe with regular HTML. I am happy to say this was successful, although I will add that I personally consider it a workaround, not a solution. I will continue to play around with <code>shinyAppDir()</code> and see what I learn. In the meantime, however, the iframe approach allows me to move forward with using this website for interactive applications.</p>
+<p>Several other commenters on an <a href="http://rmarkdown.rstudio.com/authoring_embedded_shiny.html">Embedded Shiny Apps</a> article described having the same problems I was with the <code>shinyAppDir()</code> embed approach. User <a href="https://disqus.com/by/liangchengzhang/">Liang C. Zhang</a> recommended linking to shinyapps.io via iframe with regular HTML. I am happy to say this was successful, although I will add that I personally consider it a workaround, not a solution. I will continue to play around with <code>shinyAppDir()</code> and see what I learn. In the meantime, however, the iframe approach allows me to move forward with using this website for interactive applications.</p>
 <iframe src="https://exsilica.shinyapps.io/newshinyapp" style="border: none; width: 700px; height: 700px">
 </iframe>
 </div>
 <div id="breadcrumbs" class="section level3">
 <h3>Breadcrumbs</h3>
-<p><em>Forthcoming</em></p>
+<p>Last Percolator session, I realized my best path forward was to create a <a href="https://shinyapps.io">shinyapps.io</a> account to host my web applications. Although I have come across a few alternatives, including <a href="https://www.rstudio.com/products/rstudio/download-server/">RStudio Server</a>, the ability to quickly publish Shiny apps from RStudio to the web was in line with what I am already trying to do with Github Pages.</p>
+<p>R provides a demo version of virtually every feature it offers, making it really easy to quickly start testing with prefabricated code and data. I wanted to try two things: use inline code to embed a quick Shiny app, and refer to my newly-hosted shinyapps.io content as an external directory. For the first, I used the <strong>cars</strong> app referenced in the Percolator session under <strong>Shiny Web Apps</strong>. I attempted both <code>rsconnect::deployApp()</code> and <code>ShinyAppDir()</code> for internal embedding, with a few different syntax formats for the directory path. I had been certain the problem was in how I was entering the directory path until stumbling upon the aforementioned Embedded Shiny Apps comment thread and discovering many others have experienced the same difficulties as myself. It is possible that may still be the problem - I am accustomed to working in my local directory, and the app I am trying to deploy is being knit to an HTML document hosted online.</p>
+<p>This is becoming my de facto motto: “Further experimentation needed!”</p>
 <hr />
 </div>
 </div>

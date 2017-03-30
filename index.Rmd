@@ -10,17 +10,21 @@ Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz
 Shop talk  
 *2017/03/22*
 
-After much trial and error, I finally have embedded interactive apps on the site. I'll start with the solution for those who aren't interested in reading about all of the unsuccessful attempts, but I describe the entire experiment below the app in **Breadcrumbs**.
+After much trial and error, I finally have embedded interactive apps on the site! I am posting the solution first for those who are less interested in the tales of my unsuccessful attempts, but more details can be found under the demo Old Faithful app in the **Breadcrumbs** section.
 
 ### Solution
 
-Several other commenters on the [Embedded Shiny Apps](http://rmarkdown.rstudio.com/authoring_embedded_shiny.html) article described having the same problems I was with the `shinyAppDir()` embed approach. User [Liang C. Zhang](https://disqus.com/by/liangchengzhang/) recommended linking to shinyapps.io via iframe with regular HTML. I am happy to say this was successful, although I will add that I personally consider it a workaround, not a solution. I will continue to play around with `shinyAppDir()` and see what I learn. In the meantime, however, the iframe approach allows me to move forward with using this website for interactive applications.
+Several other commenters on an [Embedded Shiny Apps](http://rmarkdown.rstudio.com/authoring_embedded_shiny.html) article described having the same problems I was with the `shinyAppDir()` embed approach. User [Liang C. Zhang](https://disqus.com/by/liangchengzhang/) recommended linking to shinyapps.io via iframe with regular HTML. I am happy to say this was successful, although I will add that I personally consider it a workaround, not a solution. I will continue to play around with `shinyAppDir()` and see what I learn. In the meantime, however, the iframe approach allows me to move forward with using this website for interactive applications.
 
 <iframe src="https://exsilica.shinyapps.io/newshinyapp" style="border: none; width: 700px; height: 700px"></iframe>
 
 ### Breadcrumbs
 
-*Forthcoming*
+Last Percolator session, I realized my best path forward was to create a [shinyapps.io](https://shinyapps.io) account to host my web applications. Although I have come across a few alternatives, including [RStudio Server](https://www.rstudio.com/products/rstudio/download-server/), the ability to quickly publish Shiny apps from RStudio to the web was in line with what I am already trying to do with Github Pages.  
+
+R provides a demo version of virtually every feature it offers, making it really easy to quickly start testing with prefabricated code and data. I wanted to try two things: use inline code to embed a quick Shiny app, and refer to my newly-hosted shinyapps.io content as an external directory. For the first, I used the **cars** app referenced in the Percolator session under **Shiny Web Apps**. I attempted both `rsconnect::deployApp()` and `ShinyAppDir()` for internal embedding, with a few different syntax formats for the directory path. I had been certain the problem was in how I was entering the directory path until stumbling upon the aforementioned Embedded Shiny Apps comment thread and discovering many others have experienced the same difficulties as myself. It is possible that may still be the problem - I am accustomed to working in my local directory, and the app I am trying to deploy is being knit to an HTML document hosted online.  
+
+This is becoming my de facto motto: "Further experimentation needed!"
 
 ********
 
