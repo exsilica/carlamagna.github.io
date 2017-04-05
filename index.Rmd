@@ -123,4 +123,4 @@ Thank you Sarah, Nicole, and Bryan for a fun and informative exploratory session
 
 # R & RStudio Setup
 
-I made a [Research Guide](guides.lib.fsu.edu/text-analysis/r) covering installation, setup, the RStudio environment, and some quick tips. I will continue to update it based on the type of questions we get.
+I made a [Research Guide](http://guides.lib.fsu.edu/text-analysis/r) covering installation, setup, the RStudio environment, and some quick tips. I will continue to update it based on the type of questions we get.
