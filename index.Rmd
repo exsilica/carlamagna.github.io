@@ -6,6 +6,14 @@ Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz
 
 ********
 
+# Early English Books Online
+Blog post by [Sarah Stanley](https://twitter.com/sarcathtic)  
+*2017/04/04*
+
+My colleague and fellow RHuman Sarah posted [a comprehensive real-world example](https://fsulib.wordpress.com/2017/04/04/r-early-english-books-online/) of using R to analyze a corpus of text from Early English Books Online (EEBO). This is a preview of the sort of work we will cover in our April 14 workshop using Shakespeare plays, so check it out!
+
+********
+
 # Playing with Shiny Apps
 Shop talk  
 *2017/03/22*
