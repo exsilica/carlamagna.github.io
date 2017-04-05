@@ -117,4 +117,10 @@ We can play around with the **cars** app in the preview window, but here we run 
 
 I've instead changed the app markup to unexcuted code (what you see above) to display what we tried to run. It appears the best solution is to create a [shinyapps.io](http://shinyapps.io) account to publish my web apps, and link to them from there. I'll set that up in the following week, and in next week's session we can focus on navigating shinyapps.io as well as client-side **htmlwidgets**.  
 
-Thank you Sarah, Nicole, and Bryan for a fun and informative exploratory session!
+Thank you Sarah, Nicole, and Bryan for a fun and informative exploratory session!  
+
+********
+
+# R & RStudio Setup
+
+I made a [Research Guide](guides.lib.fsu.edu/text-analysis/r) covering installation, setup, the RStudio environment, and some quick tips. I will continue to update it based on the type of questions we get.
