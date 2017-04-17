@@ -11,7 +11,7 @@ Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz
 Today we are going to apply exploratory text mining practices to [The Complete* Works of William Shakespeare](http://www.gutenberg.org/cache/epub/100/pg100.txt) courtesy of Project Gutenberg. 
 All of the necessary materials are in my GitHub repository [datalitfsu3](https://github.com/exsilica/datalitfsu3).  
 
-* After creating our own shortened version of this text to include only Shakespeare's plays, our analysis uncovered that the corpus includes only 36, not 38 plays. So it is not actually "complete," but props to Project Gutenberg for trying.
+\* After creating our own shortened version of this text to include only Shakespeare's plays, our analysis uncovered that the corpus includes only 36, not 38 plays. So it is not actually "complete," but props to Project Gutenberg for trying.
 
 *The workshop begins with an introduction to the RStudio environment and a beginner-friendly warm up session. As the anticipated audience for this blog is already familiar with R and RStudio basics, I am not including it here. You can follow along by downloading and running [startup.R](https://github.com/exsilica/datalitfsu3/blob/master/startup.R) in your RStudio console.*  
 
