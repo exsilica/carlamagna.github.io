@@ -301,7 +301,64 @@ div.tocify {
 <h1>Exploratory Text Analysis</h1>
 <p>Workshop by <a href="https://twitter.com/sarcathtic">Sarah Stanley</a> and Carolyn Moritz<br />
 <em>2017/04/14</em></p>
+<p><strong>Text analysis</strong> covers any method that treats text as data, sorting and analyzing it for research. The more specific <strong>text mining</strong> deals with natural language text, such as that found in books, articles, and so forth.</p>
+<div id="getting-started" class="section level2">
+<h2>Getting Started</h2>
+<p>Today we are going to apply exploratory text mining practices to <a href="http://www.gutenberg.org/cache/epub/100/pg100.txt">The Complete* Works of William Shakespeare</a> courtesy of Project Gutenberg. All of the necessary materials are in my GitHub repository <a href="https://github.com/exsilica/datalitfsu3">datalitfsu3</a>.</p>
+<p>*: After creating our own shortened version of this text to include only Shakespeare’s plays, our analysis uncovered that the corpus includes only 36, not 38 plays. So it is not actually “complete,” but props to Project Gutenberg for trying.</p>
+<p><em>The workshop begins with an introduction to the RStudio environment and a beginner-friendly warm up session. As the anticipated audience for this blog is already familiar with R and RStudio basics, I am not including it here. You can follow along by downloading and running <a href="https://github.com/exsilica/datalitfsu3/blob/master/startup.R">startup.R</a> in your RStudio console.</em></p>
+<p>We familiarize ourselves with the <code>stringr</code> library by running a quick exercise based off of Selva Prabhakaran’s <a href="https://www.udemy.com/learning-path-r-programming">Introduction to R Programming</a>.</p>
+</div>
+<div id="text-preparation" class="section level2">
+<h2>Text preparation</h2>
+<p><strong>Text preparation</strong> can take up a significant portion of text mining activities. This involves preparing the text data so that it only includes the information valuable to us. In this case, that means stripping out the Project Gutenberg licensing metadata, and then using specialized tools to parse the text data out of the XML framework.</p>
+<p>Some notes about text preparation:</p>
+<ul>
+<li>For pedagogical purposes, it makes sense for us to integrate our text prep into the workshop code. Many researchers, however, prefer third party text preparation sources such as <a href="http://openrefine.org/">OpenRefine</a> for spreadsheets or <a href="https://www.oxygenxml.com/">Oxygen</a> for XML. As you venture further into text analysis, try different options to develop a workflow you find comfortable.</li>
+<li><a href="http://twitter.com/katie_rawsom">Katie Rawson</a> and <a href="http://twitter.com/trevormunoz">Trevor Muñoz</a> wrote an intriguing piece called <a href="http://curatingmenus.org/articles/against-cleaning/">Against Cleaning</a> that challenges traditional notions of “unclean/messy” data and asks the researcher to consider what realities are being lost when we compulsively “clean” our raw data without first conducting a critical analysis. It is a worthwhile read for anybody who works with data in the humanities and social sciences.</li>
+</ul>
+</div>
+<div id="parsing-xml-text" class="section level2">
+<h2>Parsing XML Text</h2>
+<p>Now that we are comfortable with the concept of text manipulation, Sarah will take over and show us how to use R to parse XML text data.</p>
+<p>We first follow Sarah in <a href="https://github.com/exsilica/datalitfsu3/blob/master/shakespeare_xml.R">shakespeare_xml.R</a>. Calling <code>library(XML)</code> and <code>library(tm)</code>, we instantiate the XML parsing and text mining packages that will provide us with specific tools for what we want to do here. We first use pattern matching to identify all .xml files in the directory and write them to a vector called <code>files.v</code>. Now we can use <code>xmlTreeParse</code> and <code>xpathSApply</code> to identify our desired XPath and migrate its internal content into a content-only list. For those unfamiliar with XML, the <strong>XPath</strong> is the specific path in a nested XML document that points to our content. In this case, as we are dealing with XML composed with the <a href="http://tei-c.org/">TEI</a> language, the XPath looks like this:</p>
+<p><code>&quot;/tei:TEI//tei:sp/tei:l/text() | /tei:TEI//tei:sp/tei:ab/text() | /tei:TEI//tei:sp/tei:p/text()&quot;</code></p>
+<p>The piping in this case tells the <code>xpathSApply</code> function to find all content nested under <code>tei:l</code>, <code>tei:ab</code>, and <code>tei:p</code>. This gives us lines, abstract data, and paragraphs.</p>
+<p>Sarah’s text prep has 4 goals:<br />
+1. Remove metadata<br />
+2. Define a start and end point for the entire corpus<br />
+3. Separate each play into individual units<br />
+4. Create a vector list for each play containing its individual words</p>
+</div>
+<div id="word-frequencies" class="section level2">
+<h2>Word Frequencies</h2>
+<p>Sarah can now call <em>The Merchant of Venice</em> and separate its text into a vector of individual words. To illustrate some of the further preparation an analyst might wish to undertake, Sarah first creates a new vector <code>antonios.v</code> containing all instances of the word “Antonio” and runs <code>length(antonios.v)</code> to see how frequently it appears. Wow, Antonio appears quite a bit! Do the characters in The Merchant of Venice discuss Antonio all the time? Probably not. Plays include speaker tags: an indication that a particular character is about to speak next. You have likely seen it:</p>
+<p>ANTONIO: Mark you this, Bassanio, / The devil can cite Scripture for his purpose…</p>
+<p>It is highly likely that the high occurrence of “Antonio” includes these speaker tags; if we remove them, we can more closely analyze how many times Antonio is actually mentioned by the play’s characters.</p>
+<p>Returning to our prepared text, Sarah runs a <strong>word frequency table</strong> of the entire play, configuring her table to return the top 10 most frequent words.</p>
+</div>
+<div id="narrative-time" class="section level2">
+<h2>Narrative Time</h2>
+<p>Follow along with <a href="https://github.com/exsilica/datalitfsu3/blob/master/shakespeare_plaintext.R">shakespeare_plaintext.R</a>.</p>
+<p>Now that we can individually move between plays, Sarah chooses <em>The Merchant of Venice</em> for a session on Narrative Time. Unlike chronological time, which takes a linear progression between a single starting and ending point, <strong>narrative time</strong> covers the temporal telling of events from a number of different dimensions. This might include a comparative analysis between <a href="http://www2.anglistik.uni-freiburg.de/intranet/englishbasics/Time02.htm">story time and discourse time</a>, or, as in Sarah’s case, assessing particular scenes in a play. Now we can run another word frequency table to compare how frequently certain words (Antonio, perhaps) occur in different scenes.</p>
+</div>
+<div id="topic-modeling" class="section level2">
+<h2>Topic Modeling</h2>
+<p>You are probably beginning to form an idea in your mind of the sorts of analyses you could make about a corpus with operations such as word frequencies. More sophisticated techniques build upon these more basic functions; one of these is called <strong>topic modeling</strong>. Here I take over with <a href="https://github.com/exsilica/datalitfsu3/blob/master/topicmodel.R">topicmodel.R</a>.</p>
+<p>By separating a text into a vector of disparate, unconnected words, we can model the several themes and topics an author covers in any given work.</p>
+<p>We start by segmenting the text into “chunks” of 1000 words each. The function runs an additional check to add the final chunk of text to the previous one if it is under 500 words, or add it to a new segment if it is 500 words or greater.</p>
+<p>I am currently working on a comparative topic model between the different plays in Shakespeare’s corpus. For the purposes of this shorter workshop, however, we will use the XMLAuthorCorpus folder provided by Matthew Jockers, author of <a href="www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/">Text Analysis for Students of Literature</a>.</p>
+<p>Once again, we create our <code>files.v</code> vector and fill it with each .xml file in the corpus folder, and then grab the file names without the extension to hold in a variable named <code>textname</code>. We do another round of text preparation to prepare our data for a topic model, converting it into a data frame with two columns.</p>
+<p><strong>Some helpful language:</strong><br />
+1. <strong>List:</strong> 1-dimensional, homogenous (only carries one data type)<br />
+2. <strong>Matrix:</strong> 2-dimensional, homogenous<br />
+3. <strong>Vector:</strong> 1-dimensional, heterogenous (carries multiple data types)<br />
+4. <strong>Data Frame:</strong> 2-dimensional, heterogenous</p>
+<p>So, our resulting data frame carries one column called <code>&quot;id&quot;</code> made up of all of those individual file names we grabbed in <code>textname</code>, and another column called <code>&quot;text&quot;</code> holding each file’s associated text. This sorting is a best practice for usability purposes: the resulting model will not be very meaningful to us if we do not create a column with individual titles to describe each story’s results.</p>
+<p>We now install the <code>mallet</code> package, which runs on <code>rJava</code> to make powerful operations. <code>rJava</code> allows for us to interface with the Java programming language through R, and has a number of interesting applications. We can run <code>getVocabulary</code> to see a full list of the resulting vocabulary - that is, the separate words from our corpus. We use this vocabulary list to set column names - again, to make the results intelligible to us - and pull some example keywords, “california” and “ireland” for a preliminary assessment.</p>
+<p>Finally, we can visualize our results with the <code>wordcloud</code> library. Wordclouds, like all plots in R, have a variety of configuration settings to adjust the aesthetic options.</p>
 <hr />
+</div>
 </div>
 <div id="early-english-books-online" class="section level1">
 <h1>Early English Books Online</h1>
