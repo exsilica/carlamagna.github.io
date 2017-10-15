@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">RHumans</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="setup.html">Like this setup?</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<hr />
+<div id="project-scope" class="section level1">
+<h1>Project Scope</h1>
+<p>Map of hiking and cycling destinations, with photos and logs from each trip. I have a format in mind modeled after <a href="https://programminghistorian.org/lessons/using-javascript-to-create-maps">this Javascript correspondence map</a> from Programming Historian, although it is my intention to create a Shiny app to this purpose.</p>
+<p>I am getting the text logs out as I write them so as not to forget the details, so do not grow too comfortable with this static format as the text currently lives here merely for posterity.</p>
+<p><strong>Style:</strong> The daily log details follow in the tradition of the boating logs my father taught me to keep while growing up, with the added understanding that over time I may come to include details relevant to hiking that would not be included in a ship’s manifest. The notes are modeled after the narrative style of Thomas D. Murphy’s wonderful motor tourism books from the early 20th century.</p>
+<hr />
+</div>
+<div id="pawling-appalachian-trail" class="section level1">
+<h1>Pawling Appalachian Trail</h1>
+<div id="starting-guidelines" class="section level3">
+<h3>Starting Guidelines</h3>
+<p><em><a href="http://www.hvmag.com/Hudson-Valley-Magazine/July-2016/Top-30-Hiking-and-Biking-Adventures/">Hudson Valley Magazine</a></em><br />
+<strong>Difficulty:</strong> Somewhat strenuous<br />
+<strong>Duration:</strong> 7 miles; min. 5 hours<br />
+<strong>Resources:</strong> <a href="www.nynjtc.org/park/appalachian-national-scenic-trail">NYNJ Trail Conference</a> | <a href="http://www.dutchess.org/hiking/pawling_appalachian_trail">Dutchess County</a></p>
+<p><em>2017/10/14</em></p>
+<p><strong>Depart:</strong> 12:45<br />
+<strong>Return:</strong> 16:00<br />
+<strong>Temp:</strong> <a href="https://www.timeanddate.com/weather/@7161810/historic">appx. 66-70 F</a></p>
+</div>
+<div id="notes" class="section level3">
+<h3>Notes</h3>
+<p>Although the forecast predicted cloudy skies, we enjoyed a clear blue sky throughout the duration of our hike.</p>
+<p>After perusing a rich guide of regional hiking and cycling options in the Hudson Valley magazine, we selected the nearby Pawling Appalachian Trail for our first hike. The Pawling entrance to the Appalachian trail is 23 miles southeast of our apartment in Poughkeepsie, and we made the drive in roughly 40 minutes. HV Mag had informed us that this particular train stop was put in place specifically for hikers; what we did not anticipate was the cheerful resting gazebo and Garden Center maintained by the Hudson Valley chapter of the Appalachian Trail Community.</p>
+<p>We happened upon this resting site while it was hosting one of the many little harvest fests that have been popping up all over the region since the start of October. The Garden Center offered numerous comforts, from fresh harvest vegetables and packaged hiking meals to regional guides for wildlife, camping spots, and travel tips specific to rail backpackers. They offered us fresh cider (I was delighted to discover bits of pulp) and provided suggestions for our first trip out.</p>
+<p>The Pawling Nature Reserve spans 1060 acres. There are two entrances to the trail on either side of the Metro-North Appalachian Trail Station. We knew we would not make the full 7 mile hike today: we were getting a late start and had more of a short picnic-type outing in mind. We followed the advice to take the east trail entrance for the best views in a short period of time.</p>
+<p>I was amazed at the height of the tall grass surrounding us on the swamp boardwalk entrance, reaching high over both my and Avery’s heads. We trekked about two miles up the mountain at a relatively leisurely pace (I have the privilege of saying this as Avery was the one carrying the pack). We made too much noise to encounter any mindful wildlife, although we came across what was probably deer scat (based on the size) in a couple locations. At one point I spooked a chipmunk, who darted a way off before she stopped and turned back to yell at me.</p>
+<p>We eventually left the mouth of the woods to a wide flat clearing, surprisingly verdant after the autumnal trail we had followed beneath the trees. The peaks of Cat Rocks surrounded us lush with the full foliage of seasons in the midst of changing. We picked a spot in the middle of the grassy clearing to enjoy a lunch of tuna sandwiches on poppy seed rolls. We took our time enjoying the view, although the peaceful scene was somewhat alarmingly punctuated by the sounds of gunshots from what we assume were hunters in distant woods.</p>
+<p>This is clearly a popular trail, as we met several other hikers on the way back down. A number of dogs (good dogs, all) raced ahead of their companions, thrilled to be out in the woods. We refreshed ourselves with water and I enjoyed the pick-me-up of a sweet apple, and we agreed the hiking community up here is a credit to the Hudson Valley region at large, comprised of incredibly friendly and helpful people. We rested in Avery’s car for a moment before heading out. We will definitely be back for a full day’s hike to make the climb up Cat Rocks. Within the next month these mountains will be on fire with the full change of leaves.</p>
+</div>
+</div>
+
+<hr>
+<p>Powered by RMarkdown and GitHub Pages.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0"
+                src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> &nbsp;
+                <a href="http://twitter.com/exsilica" target="_blank">2017 Carolyn Moritz</a></p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
