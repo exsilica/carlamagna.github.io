@@ -1,0 +1,40 @@
+********
+# Project Scope
+Map of hiking and cycling destinations, with photos and logs from each trip. I have a format in mind modeled after [this Javascript correspondence map](https://programminghistorian.org/lessons/using-javascript-to-create-maps) from Programming Historian, although it is my intention to create a Shiny app to this purpose.    
+
+I am getting the text logs out as I write them so as not to forget the details, so do not grow too comfortable with this static format as the text currently lives here merely for posterity.    
+
+**Style:** The daily log details follow in the tradition of the boating logs my father taught me to keep while growing up, with the added understanding that over time I may come to include details relevant to hiking that would not be included in a ship's manifest. The notes are modeled after the narrative style of Thomas D. Murphy's wonderful motor tourism books from the early 20th century.  
+
+
+********
+
+
+# Pawling Appalachian Trail
+
+### Starting Guidelines
+*[Hudson Valley Magazine](http://www.hvmag.com/Hudson-Valley-Magazine/July-2016/Top-30-Hiking-and-Biking-Adventures/)*    
+**Difficulty:** Somewhat strenuous    
+**Duration:** 7 miles; min. 5 hours    
+**Resources:** [NYNJ Trail Conference](www.nynjtc.org/park/appalachian-national-scenic-trail) | [Dutchess County](http://www.dutchess.org/hiking/pawling_appalachian_trail)    
+
+*2017/10/14*
+
+**Depart:** 12:45    
+**Return:** 16:00    
+**Temp:** [appx. 66-70 F](https://www.timeanddate.com/weather/@7161810/historic)    
+
+### Notes
+Although the forecast predicted cloudy skies, we enjoyed a clear blue sky throughout the duration of our hike.
+
+After perusing a rich guide of regional hiking and cycling options in the Hudson Valley magazine, we selected the nearby Pawling Appalachian Trail for our first hike. The Pawling entrance to the Appalachian trail is 23 miles southeast of our apartment in Poughkeepsie, and we made the drive in roughly 40 minutes. HV Mag had informed us that this particular train stop was put in place specifically for hikers; what we did not anticipate was the cheerful resting gazebo and Garden Center maintained by the Hudson Valley chapter of the Appalachian Trail Community.    
+
+We happened upon this resting site while it was hosting one of the many little harvest fests that have been popping up all over the region since the start of October. The Garden Center offered numerous comforts, from fresh harvest vegetables and packaged hiking meals to regional guides for wildlife, camping spots, and travel tips specific to rail backpackers. They offered us fresh cider (I was delighted to discover bits of pulp) and provided suggestions for our first trip out.    
+
+The Pawling Nature Reserve spans 1060 acres. There are two entrances to the trail on either side of the Metro-North Appalachian Trail Station. We knew we would not make the full 7 mile hike today: we were getting a late start and had more of a short picnic-type outing in mind. We followed the advice to take the east trail entrance for the best views in a short period of time.    
+
+I was amazed at the height of the tall grass surrounding us on the swamp boardwalk entrance, reaching high over both my and Avery's heads. We trekked about two miles up the mountain at a relatively leisurely pace (I have the privilege of saying this as Avery was the one carrying the pack). We made too much noise to encounter any mindful wildlife, although we came across what was probably deer scat (based on the size) in a couple locations. At one point I spooked a chipmunk, who darted a way off before she stopped and turned back to yell at me.    
+
+We eventually left the mouth of the woods to a wide flat clearing, surprisingly verdant after the autumnal trail we had followed beneath the trees. The peaks of Cat Rocks surrounded us lush with the full foliage of seasons in the midst of changing. We picked a spot in the middle of the grassy clearing to enjoy a lunch of tuna sandwiches on poppy seed rolls. We took our time enjoying the view, although the peaceful scene was somewhat alarmingly punctuated by the sounds of gunshots from what we assume were hunters in distant woods.    
+
+This is clearly a popular trail, as we met several other hikers on the way back down. A number of dogs (good dogs, all) raced ahead of their companions, thrilled to be out in the woods. We refreshed ourselves with water and I enjoyed the pick-me-up of a sweet apple, and we agreed the hiking community up here is a credit to the Hudson Valley region at large, comprised of incredibly friendly and helpful people. We rested in Avery's car for a moment before heading out. We will definitely be back for a full day's hike to make the climb up Cat Rocks. Within the next month these mountains will be on fire with the full change of leaves.

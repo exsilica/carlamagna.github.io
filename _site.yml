@@ -2,6 +2,8 @@ name: "RHumans"
 navbar:
   title: "RHumans"
   left:
+    - text: "Journeys"
+      href: journeys.html
     - text: "About"
       href: about.html
     - text: "Like this setup?"
