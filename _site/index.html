@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">RHumans</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="journeys.html">Journeys</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="setup.html">Like this setup?</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<hr />
+<div id="exploratory-text-analysis" class="section level1">
+<h1>Exploratory Text Analysis</h1>
+<p>Workshop by <a href="https://twitter.com/sarcathtic">Sarah Stanley</a> and Carolyn Moritz<br />
+<em>2017/04/14</em></p>
+<p><strong>Text analysis</strong> covers any method that treats text as data, sorting and analyzing it for research. The more specific <strong>text mining</strong> deals with natural language text, such as that found in books, articles, and so forth.</p>
+<div id="getting-started" class="section level2">
+<h2>Getting Started</h2>
+<p>Today we are going to apply exploratory text mining practices to <a href="http://www.gutenberg.org/cache/epub/100/pg100.txt">The Complete* Works of William Shakespeare</a> courtesy of Project Gutenberg. All of the necessary materials are in my GitHub repository <a href="https://github.com/exsilica/datalitfsu3">datalitfsu3</a>.</p>
+<p>* After creating our own shortened version of this text to include only Shakespeare’s plays, our analysis uncovered that the corpus includes only 36, not 38 plays. So it is not actually “complete,” but props to Project Gutenberg for trying.</p>
+<p><em>The workshop begins with an introduction to the RStudio environment and a beginner-friendly warm up session. As the anticipated audience for this blog is already familiar with R and RStudio basics, I am not including it here. You can follow along by downloading and running <a href="https://github.com/exsilica/datalitfsu3/blob/master/startup.R">startup.R</a> in your RStudio console.</em></p>
+<p>We familiarize ourselves with the <code>stringr</code> library by running a quick exercise based off of Selva Prabhakaran’s <a href="https://www.udemy.com/learning-path-r-programming">Introduction to R Programming</a>.</p>
+</div>
+<div id="text-preparation" class="section level2">
+<h2>Text preparation</h2>
+<p><strong>Text preparation</strong> can take up a significant portion of text mining activities. This involves preparing the text data so that it only includes the information valuable to us. In this case, that means stripping out the Project Gutenberg licensing metadata, and then using specialized tools to parse the text data out of the XML framework.</p>
+<p>Some notes about text preparation:</p>
+<ul>
+<li>For pedagogical purposes, it makes sense for us to integrate our text prep into the workshop code. Many researchers, however, prefer third party text preparation sources such as <a href="http://openrefine.org/">OpenRefine</a> for spreadsheets or <a href="https://www.oxygenxml.com/">Oxygen</a> for XML. As you venture further into text analysis, try different options to develop a workflow you find comfortable.</li>
+<li><a href="http://twitter.com/katie_rawsom">Katie Rawson</a> and <a href="http://twitter.com/trevormunoz">Trevor Muñoz</a> wrote an intriguing piece called <a href="http://curatingmenus.org/articles/against-cleaning/">Against Cleaning</a> that challenges traditional notions of “unclean/messy” data and asks the researcher to consider what realities are being lost when we compulsively “clean” our raw data without first conducting a critical analysis. It is a worthwhile read for anybody who works with data in the humanities and social sciences.</li>
+</ul>
+</div>
+<div id="parsing-xml-text" class="section level2">
+<h2>Parsing XML Text</h2>
+<p>Now that we are comfortable with the concept of text manipulation, Sarah will take over and show us how to use R to parse XML text data.</p>
+<p>We first follow Sarah in <a href="https://github.com/exsilica/datalitfsu3/blob/master/shakespeare_xml.R">shakespeare_xml.R</a>. Calling <code>library(XML)</code> and <code>library(tm)</code>, we instantiate the XML parsing and text mining packages that will provide us with specific tools for what we want to do here. We first use pattern matching to identify all .xml files in the directory and write them to a vector called <code>files.v</code>. Now we can use <code>xmlTreeParse</code> and <code>xpathSApply</code> to identify our desired XPath and migrate its internal content into a content-only list. For those unfamiliar with XML, the <strong>XPath</strong> is the specific path in a nested XML document that points to our content. In this case, as we are dealing with XML composed with the <a href="http://tei-c.org/">TEI</a> language, the XPath looks like this:</p>
+<p><code>&quot;/tei:TEI//tei:sp/tei:l/text() | /tei:TEI//tei:sp/tei:ab/text() | /tei:TEI//tei:sp/tei:p/text()&quot;</code></p>
+<p>The piping in this case tells the <code>xpathSApply</code> function to find all content nested under <code>tei:l</code>, <code>tei:ab</code>, and <code>tei:p</code>. This gives us lines, abstract data, and paragraphs.</p>
+<p>Sarah’s text prep has 4 goals:<br />
+1. Remove metadata<br />
+2. Define a start and end point for the entire corpus<br />
+3. Separate each play into individual units<br />
+4. Create a vector list for each play containing its individual words</p>
+</div>
+<div id="word-frequencies" class="section level2">
+<h2>Word Frequencies</h2>
+<p>Sarah can now call <em>The Merchant of Venice</em> and separate its text into a vector of individual words. To illustrate some of the further preparation an analyst might wish to undertake, Sarah first creates a new vector <code>antonios.v</code> containing all instances of the word “Antonio” and runs <code>length(antonios.v)</code> to see how frequently it appears. Wow, Antonio appears quite a bit! Do the characters in The Merchant of Venice discuss Antonio all the time? Probably not. Plays include speaker tags: an indication that a particular character is about to speak next. You have likely seen it:</p>
+<p>ANTONIO: Mark you this, Bassanio, / The devil can cite Scripture for his purpose…</p>
+<p>It is highly likely that the high occurrence of “Antonio” includes these speaker tags; if we remove them, we can more closely analyze how many times Antonio is actually mentioned by the play’s characters.</p>
+<p>Returning to our prepared text, Sarah runs a <strong>word frequency table</strong> of the entire play, configuring her table to return the top 10 most frequent words.</p>
+</div>
+<div id="narrative-time" class="section level2">
+<h2>Narrative Time</h2>
+<p>Follow along with <a href="https://github.com/exsilica/datalitfsu3/blob/master/shakespeare_plaintext.R">shakespeare_plaintext.R</a>.</p>
+<p>Now that we can individually move between plays, Sarah chooses <em>The Merchant of Venice</em> for a session on Narrative Time. Unlike chronological time, which takes a linear progression between a single starting and ending point, <strong>narrative time</strong> covers the temporal telling of events from a number of different dimensions. This might include a comparative analysis between <a href="http://www2.anglistik.uni-freiburg.de/intranet/englishbasics/Time02.htm">story time and discourse time</a>, or, as in Sarah’s case, assessing particular scenes in a play. Now we can run another word frequency table to compare how frequently certain words (Antonio, perhaps) occur in different scenes.</p>
+</div>
+<div id="topic-modeling" class="section level2">
+<h2>Topic Modeling</h2>
+<p>You are probably beginning to form an idea in your mind of the sorts of analyses you could make about a corpus with operations such as word frequencies. More sophisticated techniques build upon these more basic functions; one of these is called <strong>topic modeling</strong>. Here I take over with <a href="https://github.com/exsilica/datalitfsu3/blob/master/topicmodel.R">topicmodel.R</a>.</p>
+<p>By separating a text into a vector of disparate, unconnected words, we can model the several themes and topics an author covers in any given work.</p>
+<p>We start by segmenting the text into “chunks” of 1000 words each. The function runs an additional check to add the final chunk of text to the previous one if it is under 500 words, or add it to a new segment if it is 500 words or greater.</p>
+<p>I am currently working on a comparative topic model between the different plays in Shakespeare’s corpus. For the purposes of this shorter workshop, however, we will use the XMLAuthorCorpus folder provided by Matthew Jockers, author of <a href="www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/">Text Analysis for Students of Literature</a>.</p>
+<p>Once again, we create our <code>files.v</code> vector and fill it with each .xml file in the corpus folder, and then grab the file names without the extension to hold in a variable named <code>textname</code>. We do another round of text preparation to prepare our data for a topic model, converting it into a data frame with two columns.</p>
+<p><strong>Some helpful language:</strong><br />
+1. <strong>List:</strong> 1-dimensional, homogenous (only carries one data type)<br />
+2. <strong>Matrix:</strong> 2-dimensional, homogenous<br />
+3. <strong>Vector:</strong> 1-dimensional, heterogenous (carries multiple data types)<br />
+4. <strong>Data Frame:</strong> 2-dimensional, heterogenous</p>
+<p>So, our resulting data frame carries one column called <code>&quot;id&quot;</code> made up of all of those individual file names we grabbed in <code>textname</code>, and another column called <code>&quot;text&quot;</code> holding each file’s associated text. This sorting is a best practice for usability purposes: the resulting model will not be very meaningful to us if we do not create a column with individual titles to describe each story’s results.</p>
+<p>We now install the <code>mallet</code> package, which runs on <code>rJava</code> to make powerful operations. <code>rJava</code> allows for us to interface with the Java programming language through R, and has a number of interesting applications. We can run <code>getVocabulary</code> to see a full list of the resulting vocabulary - that is, the separate words from our corpus. We use this vocabulary list to set column names - again, to make the results intelligible to us - and pull some example keywords, “california” and “ireland” for a preliminary assessment.</p>
+<p>Finally, we can visualize our results with the <code>wordcloud</code> library. Wordclouds, like all plots in R, have a variety of configuration settings to adjust the aesthetic options.</p>
+<hr />
+</div>
+</div>
+<div id="early-english-books-online" class="section level1">
+<h1>Early English Books Online</h1>
+<p>Blog post by <a href="https://twitter.com/sarcathtic">Sarah Stanley</a><br />
+<em>2017/04/04</em></p>
+<p>My colleague and fellow RHuman Sarah posted <a href="https://fsulib.wordpress.com/2017/04/04/r-early-english-books-online/">a comprehensive real-world example</a> of using R to analyze a corpus of text from Early English Books Online (EEBO). This is a preview of the sort of work we will cover in our April 14 workshop using Shakespeare plays, so check it out!</p>
+<hr />
+</div>
+<div id="playing-with-shiny-apps" class="section level1">
+<h1>Playing with Shiny Apps</h1>
+<p>Shop talk<br />
+<em>2017/03/22</em></p>
+<p>After much trial and error, I finally have embedded interactive apps on the site! I am posting the solution first for those who are less interested in the tales of my unsuccessful attempts, but more details can be found under the demo Old Faithful app in the <strong>Breadcrumbs</strong> section.</p>
+<div id="solution" class="section level3">
+<h3>Solution</h3>
+<p>Several other commenters on an <a href="http://rmarkdown.rstudio.com/authoring_embedded_shiny.html">Embedded Shiny Apps</a> article described having the same problems I was with the <code>shinyAppDir()</code> embed approach. User <a href="https://disqus.com/by/liangchengzhang/">Liang C. Zhang</a> recommended linking to shinyapps.io via iframe with regular HTML. I am happy to say this was successful, although I will add that I personally consider it a workaround, not a solution. I will continue to play around with <code>shinyAppDir()</code> and see what I learn. In the meantime, however, the iframe approach allows me to move forward with using this website for interactive applications.</p>
+<iframe src="https://exsilica.shinyapps.io/newshinyapp" style="border: none; width: 700px; height: 700px">
+</iframe>
+</div>
+<div id="breadcrumbs" class="section level3">
+<h3>Breadcrumbs</h3>
+<p>Last Percolator session, I realized my best path forward was to create a <a href="https://shinyapps.io">shinyapps.io</a> account to host my web applications. Although I have come across a few alternatives, including <a href="https://www.rstudio.com/products/rstudio/download-server/">RStudio Server</a>, the ability to quickly publish Shiny apps from RStudio to the web was in line with what I am already trying to do with Github Pages.</p>
+<p>R provides a demo version of virtually every feature it offers, making it really easy to quickly start testing with prefabricated code and data. I wanted to try two things: use inline code to embed a quick Shiny app, and refer to my newly-hosted shinyapps.io content as an external directory. For the first, I used the <strong>cars</strong> app referenced in the Percolator session under <strong>Shiny Web Apps</strong>. I attempted both <code>rsconnect::deployApp()</code> and <code>ShinyAppDir()</code> for internal embedding, with a few different syntax formats for the directory path. I had been certain the problem was in how I was entering the directory path until stumbling upon the aforementioned Embedded Shiny Apps comment thread and discovering many others have experienced the same difficulties as myself. It is possible that may still be the problem - I am accustomed to working in my local directory, and the app I am trying to deploy is being knit to an HTML document hosted online.</p>
+<p>This is becoming my de facto motto: “Further experimentation needed!”</p>
+<hr />
+</div>
+</div>
+<div id="intro-to-rmarkdown" class="section level1">
+<h1>Intro to RMarkdown</h1>
+<p>Percolator session by Carolyn Moritz<br />
+<em>2017/03/01</em></p>
+<p><strong>Percolator</strong>: Open office hours here at the <a href="https://www.lib.fsu.edu/drs">Office of Digital Research &amp; Scholarship</a>, located in the Scholars Commons of the FSU Strozier Library. We percolate on Wednesdays from 3:00 - 5:00pm EST, and while everybody is free to come consult, play, or just hang out, sometimes we theme our sessions. I have been a fan of the R language for three years now, but only just discovered RMarkdown last Friday and put up this website on Monday. I am eager to explore possible next steps, so this week’s Percolator is in RMarkdown’s honor! Here to join me are <a href="https://twitter.com/sarcathtic">Sarah Stanley</a> and <a href="https://twitter.com/NickyStray">Nicole Strayhorn</a>, with occasional visits and jokes from <a href="https://twitter.com/bryjbrown">Bryan Brown</a>.</p>
+<div id="initial-setup" class="section level3">
+<h3>Initial Setup</h3>
+<p>To follow along on your own machine, first install <a href="https://cran.r-project.org/">R</a> and <a href="https://www.rstudio.com/products/rstudio/">RStudio</a>.<br />
+In the RStudio console, install the RMarkdown package and call the library: <br><br> <code>install.packages(&quot;rmarkdown&quot;)</code><br />
+<code>library(rmarkdown)</code></p>
+<p><strong>Reference Links</strong><br />
+<a href="http://rmarkdown.rstudio.com/lesson-1.html">Get Started</a><br />
+<a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">RMarkdown Reference Guide</a><br />
+<a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">RMarkdown Cheatsheet</a><br />
+<a href="http://rmarkdown.rstudio.com/gallery.html">Gallery</a></p>
+<p>The following section is a handy reference provided by RStudio. To create it as an independent RMarkdown document: <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>R Markdown…</strong></p>
+</div>
+<div id="rmarkdown" class="section level3">
+<h3>RMarkdown</h3>
+<p>This is an RMarkdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+<div id="including-plots" class="section level3">
+<h3>Including Plots</h3>
+<p>You can also embed plots, for example:</p>
+<p><img src="index_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+<div id="demonstration-pushing-to-site" class="section level3">
+<h3>Demonstration: Pushing to Site</h3>
+<p>Participants curious about this website setup are encouraged to visit <a href="setup.html">Like this setup?</a> for notes on the resources I used.</p>
+<p>Pushing new content to the live site consists of three steps: <strong>Knit</strong>, <strong>Commit</strong>, and <strong>Push</strong>.</p>
+<p>Selecting <strong>Knit HTML</strong> <img src="images/knit.png" /> in the console opens a live preview window. If I had an RPub account synced to this console, I could select <strong>Publish</strong> <img src="images/publish.png" /> and automatically send the generated HTML document to an RPub website. My configuration, however, requires two quick additional steps.</p>
+<p>We <strong>commit</strong> changes in the Version Control dropdown menu:<br />
+<img src="images/versiondropdown.png" /></p>
+<p>The left pane displays files that have been changed. Now we select <strong>Staged</strong> for all of them and add a useful commit message. We select <strong>Commit</strong>, close the confirmation window, and finally push the content to the site with <strong>Push</strong>.</p>
+<div class="figure">
+<img src="images/versioncontrol.png" />
+
+</div>
+<p>Interesting to note: Occasionally, the commit will fail the first time, but succeed on a second attempt. Cursory reserach reveals that this is not an uncommon issue, but I have not yet uncovered the reason. As it does not occur in my home, it may possibly have to do with FSU’s campus firewalls.</p>
+<p>We can quickly browse the available references (see <strong>Reference Links</strong> in the <strong>Initial Setup</strong> section) to get an idea of what RMarkdown can do. A significant note here is that, while this is an HTML website, RMarkdown has several other output formats available including presentations, word processing and PDF documents, notebooks, and <a href="http://rmarkdown.rstudio.com/lesson-14.html">interactive content</a>. This last output is what I want to explore in today’s Percolator session.</p>
+</div>
+<div id="shiny-web-apps" class="section level3">
+<h3>Shiny Web Apps</h3>
+<p>Adding <code>runtime: shiny</code> to the YAML head (which is actually <a href="http://push.cwcon.org/learn/yaml-and-markdown.html">not the same Pandoc markdown language we are using in the rest of the document</a>) allows us to call Shiny code right in the document. Once we do so, we can see that the <strong>Knit HTML</strong> option has changed to <strong>Run Document</strong> <img src="images/rundoc.png" />.</p>
+<p>We first open a standalone Shiny app in RStudio to get an idea of how it behaves: <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>Shiny Web App…</strong> We select <strong>Run App</strong> <img src="images/runapp.png" /> to run the auto-generated web application the sample text provides, which opens in an interactive preview window:</p>
+<div class="figure">
+<img src="images/shinyapp.png" />
+
+</div>
+<p>Now we’re playing! It’s time to call some Shiny code into RMarkdown. I take the sample code from the <a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">RMarkdown Cheatsheet</a> and pop it into our newly-minted <strong>Shiny Web Apps</strong> section.</p>
+<p><code>{r, echo = FALSE}</code><br />
+<code>numericInput(&quot;n&quot;,</code><br />
+<code>&quot;How many cars?&quot;, 5)</code><br />
+<code>renderTable({</code><br />
+<code>head(cars, input$n)</code><br />
+<code>})</code></p>
+<p>We can play around with the <strong>cars</strong> app in the preview window, but here we run into publishing issues. Because <strong>Run Document</strong> has completely replaced the option to knit an HTML document, we cannot publish this to the site. Returning to our reference documents, we see that Shiny apps are server-side and, as browsers do not read R code, only run in an active R session. I take <code>runtime: shiny</code> out of the head so that I can knit the final results, supposing that the browser version will display a static screenshot. Instead RStudio calls an error: without <code>runtime: shiny</code>, it cannot call the code at all:</p>
+<div class="figure">
+<img src="images/shinyerror.png" />
+
+</div>
+<p>I’ve instead changed the app markup to unexcuted code (what you see above) to display what we tried to run. It appears the best solution is to create a <a href="http://shinyapps.io">shinyapps.io</a> account to publish my web apps, and link to them from there. I’ll set that up in the following week, and in next week’s session we can focus on navigating shinyapps.io as well as client-side <strong>htmlwidgets</strong>.</p>
+<p>Thank you Sarah, Nicole, and Bryan for a fun and informative exploratory session!</p>
+<hr />
+</div>
+</div>
+<div id="r-rstudio-setup" class="section level1">
+<h1>R &amp; RStudio Setup</h1>
+<p>I made a <a href="http://guides.lib.fsu.edu/text-analysis/r">Research Guide</a> covering installation, setup, the RStudio environment, and some quick tips. I will continue to update it based on the type of questions we get.</p>
+</div>
+
+<hr>
+<p>Powered by RMarkdown and GitHub Pages.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0"
+                src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> &nbsp;
+                <a href="http://twitter.com/exsilica" target="_blank">2017 Carolyn Moritz</a></p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
