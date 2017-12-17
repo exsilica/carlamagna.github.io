@@ -2,6 +2,8 @@
 title: "About RHumans"
 ---
 
-For quite some time the R programming language has reigned as the darling of statistical programming, but the emerging Digital Humanities field is only just beginning to harness its potential for text analysis. RHuman [Carolyn Moritz](http://twitter.com/exsilica) created this website to explore what "data analysis" can mean in the context of humanities data and nontextual digital media sources.    
+My name is [Carolyn](http://orcid.org/0000-0001-8221-0519). I had the awesome opportunity to take a "play" approach to learning and working while at Florida State's office of Digital Resarch and Scholarship. I got to work on neat R projects with brilliant people like [Sarah Stanley](https://twitter.com/sarcathtic), and developed the almost perverse impulse to ask myself "Okay, but can I do that in R?"  
 
-**Journeys** is a personal mapping log and journal of outdoor adventures by Carolyn Moritz, Avery Cooper, and hopefully many more future companions. As of its birth on October 15, 2017, it is conceptualized as an interactive map (see *Project Scope* on the Journeys page), although other manifestations may be considered as the project grows.
+I try to make myself useful. I now live in Dutchess County, NY, and there is a lot of good work that will keep making this a better place to live. Passionate, intelligent people are doing that work right now.  
+
+Okay, but can we do it in R?

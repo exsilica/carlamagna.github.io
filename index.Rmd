@@ -1,4 +1,14 @@
 ********
+# Public Transit Map
+Work in progress  
+*2017/12/17*
+
+Check out [this great public transit map](https://shiny.rstudio.com/gallery/bus-dashboard.html). Are you thinking "Man, I sure wish we had that in my town"? I know I am.  
+
+Putting my work in progress goals up here to keep myself accountable. Stay tuned!
+
+********
+
 # Exploratory Text Analysis
 Workshop by [Sarah Stanley](https://twitter.com/sarcathtic) and Carolyn Moritz  
 *2017/04/14*
