@@ -1,6 +1,16 @@
 ********
 # Public Transit Map
 Work in progress  
+*2017/01/06*  
+
+The crux of this project rests on a feed of route and geographic data complying with standardized [GTFS static](https://developers.google.com/transit/gtfs/) specifications. From the looks of it, Dutchess County has been engaged in considerable work with New York State to make its public data available and accessible. Frequently-changing route data, however, is not currently available in a standardized API that would make it possible for developers to interface with it.    
+
+Last summer, the city of Poughkeepsie public transit system transitioned to operation under Dutchess County. The Poughkeepsie Journal, county and state addresses from representatives, and The Buzz city of Poughkeepsie newsletter consistently report on the county's directions and priorities for further development in this transition. I decided to take advantage of their frequent call for community feedback, and send an email to the [Public Works Division of Public Transit](http://www.co.dutchess.ny.us/CountyGov/Departments/PublicWorks/PLLoopbus.htm) to express my support for standardized route data formats. In the meantime, I will explore the county and state public data resources I have found in my search and see how much can be pieced together from a citizen's point of view.    
+
+Pictured below: My assistant Sterling corresponds with the city of Poughkeepsie Department of Public Works in support of public data.    
+
+<img src="images/sterling_emails.jpg">
+
 *2017/12/17*
 
 Check out [this great public transit map](https://shiny.rstudio.com/gallery/bus-dashboard.html). Are you thinking "Man, I sure wish we had that in my town"? I know I am.  
