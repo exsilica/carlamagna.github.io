@@ -1,7 +1,7 @@
 ********
 # Public Transit Map
 Work in progress  
-*2017/01/06*  
+*2018/01/06*  
 
 The crux of this project rests on a feed of route and geographic data complying with standardized [GTFS static](https://developers.google.com/transit/gtfs/) specifications. From the looks of it, Dutchess County has been engaged in considerable work with New York State to make its public data available and accessible. Frequently-changing route data, however, is not currently available in a standardized API that would make it possible for developers to interface with it.    
 
