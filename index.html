@@ -363,9 +363,9 @@ div.tocify {
 <p>I am currently working on a comparative topic model between the different plays in Shakespeare’s corpus. For the purposes of this shorter workshop, however, we will use the XMLAuthorCorpus folder provided by Matthew Jockers, author of <a href="www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/">Text Analysis for Students of Literature</a>.</p>
 <p>Once again, we create our <code>files.v</code> vector and fill it with each .xml file in the corpus folder, and then grab the file names without the extension to hold in a variable named <code>textname</code>. We do another round of text preparation to prepare our data for a topic model, converting it into a data frame with two columns.</p>
 <p><strong>Some helpful language:</strong><br />
-1. <strong>List:</strong> 1-dimensional, homogenous (only carries one data type)<br />
+1. <strong>Vector:</strong> 1-dimensional, homogenous (only carries one data type)<br />
 2. <strong>Matrix:</strong> 2-dimensional, homogenous<br />
-3. <strong>Vector:</strong> 1-dimensional, heterogenous (carries multiple data types)<br />
+3. <strong>List:</strong> 1-dimensional, heterogenous (carries multiple data types)<br />
 4. <strong>Data Frame:</strong> 2-dimensional, heterogenous</p>
 <p>So, our resulting data frame carries one column called <code>&quot;id&quot;</code> made up of all of those individual file names we grabbed in <code>textname</code>, and another column called <code>&quot;text&quot;</code> holding each file’s associated text. This sorting is a best practice for usability purposes: the resulting model will not be very meaningful to us if we do not create a column with individual titles to describe each story’s results.</p>
 <p>We now install the <code>mallet</code> package, which runs on <code>rJava</code> to make powerful operations. <code>rJava</code> allows for us to interface with the Java programming language through R, and has a number of interesting applications. We can run <code>getVocabulary</code> to see a full list of the resulting vocabulary - that is, the separate words from our corpus. We use this vocabulary list to set column names - again, to make the results intelligible to us - and pull some example keywords, “california” and “ireland” for a preliminary assessment.</p>
